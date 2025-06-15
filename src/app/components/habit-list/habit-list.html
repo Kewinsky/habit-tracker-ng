@@ -1,1 +1,11 @@
-<p>habit-list works!</p>
+<h2>📋 Your Habits</h2>
+
+<ul *ngIf="habits.length > 0; else empty">
+  <li *ngFor="let habit of habits">
+    <strong>{{ habit.name }}</strong> – {{ habit.description }}
+  </li>
+</ul>
+
+<ng-template #empty>
+  <p>Nie masz jeszcze żadnych nawyków.</p>
+</ng-template>
