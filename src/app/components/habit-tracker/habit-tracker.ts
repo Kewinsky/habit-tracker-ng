@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-habit-tracker',
   imports: [],
   templateUrl: './habit-tracker.html',
-  styleUrl: './habit-tracker.scss'
+  styleUrl: './habit-tracker.scss',
 })
-export class HabitTracker {
-
-}
+export class HabitTracker {}

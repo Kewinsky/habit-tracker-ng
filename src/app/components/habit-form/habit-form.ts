@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-habit-form',
   imports: [],
   templateUrl: './habit-form.html',
-  styleUrl: './habit-form.scss'
+  styleUrl: './habit-form.scss',
 })
-export class HabitForm {
-
-}
+export class HabitForm {}
