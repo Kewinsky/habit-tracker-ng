@@ -1,59 +1,68 @@
-# HabitTrackerNg
+# 🧠 HabitTrackerNg
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+A habit-tracking application built with **Angular**, **Firebase Firestore**, and **Angular Material**. Users can create, update, track, and complete habits with a focus on consistency and long-term progress.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- Create, view, edit, and delete habits (CRUD)
+- Track **current** and **longest** streaks
+- Mark habits as complete for today
+- Dashboard with habit statistics
+- Responsive UI using **Angular Material**
+- Data persistence using **Firebase Firestore**
+- Built with **Standalone Angular Components** (Angular 17+)
+
+## 🛠 Development Setup
+
+To run the app locally:
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then visit [`http://localhost:4200`](http://localhost:4200)
 
-## Code scaffolding
+## 🧪 Mock Data Seeding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+You can seed example habits (with pre-filled streaks, completed dates, etc.) by calling this method in `HabitService`:
 
-```bash
-ng generate component component-name
+```ts
+this.habitService.seedHabits();
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This is helpful for local testing and UI development. Remove the call afterward to prevent duplication.
 
-```bash
-ng generate --help
+## 🧱 Project Structure
+
+```
+src/
+├── app/
+│   ├── components/         # UI components (dashboard, habit list, form, detail)
+│   ├── models/             # Habit model interface
+│   ├── services/           # Firestore habit service
+│   └── app.routes.ts       # Routing configuration
 ```
 
-## Building
-
-To build the project run:
+## 🔨 Building the App
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Compiled files will be located in the `dist/` directory.
 
-## Running unit tests
+## 📦 Tech Stack
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Angular 17+ (Standalone Components)**
+- **Angular Material**
+- **Firebase Firestore (NoSQL DB)**
+- **RxJS** for reactive streams
+- **SCSS** for modular styles
 
-```bash
-ng test
-```
+## 📘 Learn More
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular Standalone Components](https://angular.dev/guide/standalone-components)
+- [Angular Material Docs](https://material.angular.io/)
+- [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- [RxJS Guide](https://rxjs.dev/guide/overview)
