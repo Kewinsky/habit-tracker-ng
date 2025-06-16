@@ -1,4 +1,4 @@
-# 🧠 HabitTrackerNg
+# 🧠 Habit Tracker
 
 A habit-tracking application built with **Angular**, **Firebase Firestore**, and **Angular Material**. Users can create, update, track, and complete habits with a focus on consistency and long-term progress.
 
