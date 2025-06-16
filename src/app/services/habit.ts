@@ -132,4 +132,86 @@ export class HabitService {
       })
     );
   }
+
+  async seedHabits(): Promise<void> {
+    const now = new Date();
+    const formatDate = (d: Date) => d.toISOString().split('T')[0];
+
+    const habits: Omit<HabitModel, 'id'>[] = [
+      {
+        name: 'Morning Run',
+        description: 'Go for a 30-minute jog every morning.',
+        category: 'Health',
+        createdAt: now,
+        updatedAt: now,
+        currentStreak: 2,
+        longestStreak: 3,
+        isActive: true,
+        completedDates: [
+          formatDate(new Date(now.getTime() - 2 * 86400000)),
+          formatDate(new Date(now.getTime() - 1 * 86400000)),
+        ],
+      },
+      {
+        name: 'Read a Book',
+        description: 'Read 10 pages of a book each day.',
+        category: 'Learning',
+        createdAt: now,
+        updatedAt: now,
+        currentStreak: 3,
+        longestStreak: 4,
+        isActive: true,
+        completedDates: [
+          formatDate(new Date(now.getTime() - 3 * 86400000)),
+          formatDate(new Date(now.getTime() - 2 * 86400000)),
+          formatDate(new Date(now.getTime() - 1 * 86400000)),
+        ],
+      },
+      {
+        name: 'Meditate',
+        description: '10 minutes meditation.',
+        category: 'Wellness',
+        createdAt: now,
+        updatedAt: now,
+        currentStreak: 0,
+        longestStreak: 5,
+        isActive: false,
+        completedDates: [
+          formatDate(new Date(now.getTime() - 11 * 86400000)),
+          formatDate(new Date(now.getTime() - 10 * 86400000)),
+          formatDate(new Date(now.getTime() - 9 * 86400000)),
+          formatDate(new Date(now.getTime() - 8 * 86400000)),
+          formatDate(new Date(now.getTime() - 7 * 86400000)),
+        ],
+      },
+      {
+        name: 'Write Journal',
+        description: 'Write down 3 thoughts each day.',
+        category: 'Productivity',
+        createdAt: now,
+        updatedAt: now,
+        currentStreak: 1,
+        longestStreak: 1,
+        isActive: true,
+        completedDates: [formatDate(new Date(now.getTime() - 1 * 86400000))],
+      },
+      {
+        name: 'Drink Water',
+        description: 'Drink at least 2 liters of water daily.',
+        category: 'Health',
+        createdAt: now,
+        updatedAt: now,
+        currentStreak: 0,
+        longestStreak: 0,
+        isActive: true,
+        completedDates: [],
+      },
+    ];
+
+    for (const habit of habits) {
+      await addDoc(this.habitsRef, habit);
+    }
+
+    console.log('✅ Mock habits seeded');
+  }
 }

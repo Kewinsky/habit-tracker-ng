@@ -35,6 +35,7 @@ export class HabitListComponent implements OnInit {
   private snackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
+    // this.habitService.seedHabits();
     this.habits$ = this.habitService.getHabits();
     this.stats$ = this.habitService.getHabitStats();
   }
