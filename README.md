@@ -74,7 +74,7 @@ The build artifacts will be stored in the `dist/` directory.
 
 ## 📦 Tech Stack
 
-- **Angular 17+** with Standalone Components
+- **Angular 20+** with Standalone Components
 - **Angular Material**
 - **Firebase Firestore** for NoSQL persistence
 - **RxJS** for reactive state management
