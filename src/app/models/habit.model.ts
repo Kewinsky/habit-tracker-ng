@@ -10,10 +10,3 @@ export interface HabitModel {
   updatedAt: Date;
   isActive: boolean;
 }
-
-export interface HabitProgress {
-  habitId: string;
-  date: string;
-  completed: boolean;
-  notes?: string;
-}
